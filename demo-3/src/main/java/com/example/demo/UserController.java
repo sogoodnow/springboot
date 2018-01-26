@@ -17,5 +17,5 @@ public class UserController {
 		User findone=this.repo.findOne(id);
 		return findone;
 	}
-
+ 
 }
