@@ -17,3 +17,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+  thymeleaf:
+    encoding: UTF-8
+    mode: HTML5
+    content-type: text/html; charset=utf-8
+    cache: false
