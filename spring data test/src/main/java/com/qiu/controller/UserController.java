@@ -1,28 +1,45 @@
 package com.qiu.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.qiu.dao.UsersDao;
 import com.qiu.domain.Users;
+import com.qiu.properties.UserSetting;
 
-@RestController
+@Controller
 public class UserController {
 	@Autowired
 	private Users users;
 	@Autowired
 	private UsersDao usersdao;
+//	@Autowired
+//	private DictMapper dict;
 	
-	@RequestMapping("/show")
+//	@RequestMapping("/")
+//	@ResponseBody
+//	public List<Users> index(Model model)
+//	{		
+//		List<Users> aa =usersdao.findAll();
+//		model.addAttribute("li",aa);
+//		return aa;
+//	}
+	@Autowired 
+	UserSetting usersetting;
+	
+	
+	@RequestMapping("/")
 	@ResponseBody
-	public List<Users> showall()
+	public String index(Model model)
 	{		
-		List<Users> aa =usersdao.findAll();
-		return aa;
+
+//		
+//		List<Users> aa =usersdao.findAll();
+//		model.addAttribute("li",aa);
+		return usersetting.getAddress()+usersetting.getName();
 	}
 
 }

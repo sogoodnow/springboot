@@ -12,13 +12,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Version;
 
 import org.springframework.stereotype.Component;
 
-//@NamedQuery(name = "Users.user_search", query = "select user from Users user where user.name=?1")
+
 @Component
-@Entity(name="users")
+@Entity
+@NamedQuery(name = "Users.user_search", query = "select user from Users user where user.loginName=?1")
 public class Users implements Serializable {
 
     /**

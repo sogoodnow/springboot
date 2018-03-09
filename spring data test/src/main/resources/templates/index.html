@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
+<link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+<link th:href="@{bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 <title>Insert title here</title>
 </head>
 <body>
-<p th:text="'hello! '+${name}" ></p>
-
+<p th:text="'hello! '+${li[0]}" ></p>
+<p>hello~~~</p>
 </body>
 </html>
